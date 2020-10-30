@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xlmns:th="http://www.thymeleaf.org" xmlns:xlmns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Store Login</title>
+</head>
+<body>
+
+<form action="/login/index" method="post">
+    <p>用户名：<input type="text" name="username" placeholder="username" th:value="${loginViewModel.username}"></p>
+    <p>密钥：<input type="password" name="password" placeholder="password" th:value="${loginViewModel.password}"></p>
+    <input type="hidden" name="returnUrl" th:value="${loginViewModel.returnUrl}">
+    <p><input type="checkbox" name="isRemeberMe" th:attr="checked=${loginViewModel.remberMe}"></p>
+    <p th:text="${loginViewModel.message}"></p>
+    <p><input type="submit" value="login"></p>
+</form>
+
+</body>
+</html>
